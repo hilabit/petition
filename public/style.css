@@ -1,0 +1,55 @@
+{
+    margin:0;
+}
+
+a {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 20px;
+    color: black;
+
+}
+
+body {
+    padding: 100px;
+    background-color: skyBlue;
+
+}
+
+img{
+    border: 5px solid black;
+    border-radius: 50px;
+    height: 500px;
+    width:500px;
+
+}
+
+button {
+    height:50px;
+    width:200px;
+    border-radius: 15px;
+    font-size: 20px;
+
+}
+
+input {
+    text-align: center;
+    border-radius: 15px;
+    height:50px;
+    width:200px;
+    margin: 20px;
+    font-size: 20px;
+}
+
+
+
+#canvas{
+
+    border: 5px solid black;
+    position: absolute;
+    left: 25%;
+    border-radius: 25px;
+}
+
+#names {
+
+}

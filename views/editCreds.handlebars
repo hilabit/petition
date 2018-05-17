@@ -1,0 +1,27 @@
+<div id="edit-creds-h1-wrapper">
+    <h1>Why don't you edit your profile? Decisiveness is overrated</h1>
+</div>
+
+<div id="edit-profile-wrapper">
+    {{#users}}
+
+    <form method="POST" action="/editCreds">
+        <input type = "text" name = "first" placeholder="first" value ="{{first}}" required>
+        <input type = "text" name = "last" placeholder="last" value ="{{last}}" required>
+        <input type = "email" name = "email" placeholder="email" value ="{{email}}" required>
+        <input type = "password" name = "hashedpass" placeholder="pasword" required>
+        <input type = "number" name = "age" placeholder="age" value ="{{age}}" >
+        <input type = "text" name = "city" placeholder="city" value ="{{city}}"  autocapitalize = "words">
+        <input type="text" name ="homepage" placeholder="home page URL" value ="{{homepage}}">
+
+    {{/users}}
+
+            <button type="submit" name = "update">UPDATE</button>
+            {{error}}
+            <a href = "/thoseWhoSigned">[ See the other signers here ]</a>
+            <a href = "/citySigners">[ See the people from your city who signed ]</a>
+            <a href= "/register">[ Log Out ]</a>
+        </div>
+
+    </form>
+</div>

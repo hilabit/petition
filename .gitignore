@@ -1,0 +1,7 @@
+this is a file that came with the package we've installed for this project. in it are
+things that should not be committed, I added the json file I made with my user name and password for security reasons.
+
+node_modules
+.DS_Store
+package-lock.json
+secrets.json
