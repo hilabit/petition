@@ -15,11 +15,6 @@ const citySigners = addDataToDataBase.citySigners;
 const spicedPg = require("spiced-pg");
 const bcrypt = require("bcryptjs");
 
-
-
-// var csurf = require('csurf')
-//================================================
-//heroku stuff. the json secrets file should not be retreived through heroku so we're doing this:
 let dataBase;
 if (!process.env.DATABASE_URL) {
 	const secrets = require('./secrets.json')
@@ -27,7 +22,7 @@ if (!process.env.DATABASE_URL) {
 } else {
 	dataBase = spicedPg(process.env.DATABASE_URL);
 }
-//=====================================================
+
 const express = require('express');
 const app = express();
 const hb = require('express-handlebars');
@@ -36,29 +31,29 @@ const cookieParser = require('cookie-parser');
 const cookieSession = require('cookie-session');
 
 
-//==========================cookie session (used to store the user id and signature id. it creates a req.session object)==========================
+
 app.use(cookieSession({
-	secret: process.env.SECRET || require('./secrets').secret, //the secret const I defined above requires the secret property of the json file
+	secret: process.env.SECRET || require('./secrets').secret,
 	maxAge: 1000 * 60 * 60 * 24 * 14
 }))
 
-//=============================end of cookie session==========================================
 
-//======================requiring the basic layout handlebar and css===============================
+
 
 app.engine('handlebars', hb({defaultLayout:'layout', css: '../style.css'}));
 app.set('view engine', 'handlebars');
 
-//================================================================================================
 
-//=====================the body parser (creates the object req.body that retreives everything from the post requests)==================
+
+
 app.use(bodyParser.urlencoded({
     extended: false
 }));
-//=======================================================================================================
+
+
 
 // ==========================gain access to the public folder ==========================================
-app.use(express.static('./public')); //will go into all files I required on top, that are in views
+app.use(express.static('./public'));
 
 //=====================================================================================================
 
@@ -69,13 +64,13 @@ app.get('/', (req,res) => {
 	res.render('register');
 })
 
-app.post('/users', (req,res) => {  //referrs to "users" database
+app.post('/users', (req,res) => {
 
 	hashpass(req.body.password).then((hashedpass) => {
 		req.body.hashedpass = hashedpass;
 		console.log("req.body:", req.body);
 		if(req.body.first && req.body.last && req.body.email && req.body.password) {
-			register(req.body).then((userId) => {  //the "register" function I made
+			register(req.body).then((userId) => {
 				console.log("user ID:", userId);
 				req.session.userid = userId;
 				res.redirect('/addInfo');
@@ -152,7 +147,7 @@ app.post('/addInfo', (req, res) => {
 })
 
 
-//========================referrs to "signatures" form name. retrieves the first,last names+ signature+ sigID===================
+
 app.get('/home', (req,res) => {
 	console.log("inside of GET home route");
 	res.render('home');
@@ -163,8 +158,8 @@ app.post('/home', (req, res) => {
 	req.body.userid = req.session.userid;
 	console.log("this is req.body",req.body);
 	console.log("userid", req.body.userid);
-    sign(req.body).then((sigId) => {  //req.body ==> the object that represents the request and contains all the information of the request
-			console.log("sig id", sigId);  //the .then is the result of the "sign function"
+    sign(req.body).then((sigId) => {
+			console.log("sig id", sigId);
             req.session.sigid = sigId;
             res.redirect('/thankYou');
         })
@@ -180,13 +175,13 @@ app.post('/home', (req, res) => {
 });
 //==================================================================================================
 
-//=========GET the thank you page and the number of last person who signed==================
+//=========thank you page ==================
 app.get('/thankYou', (req, res) => {
 	console.log("sigId", req.session.sigid);
     getCountId().then((countId) => {
         getSigImg(req.session.sigid)
         .then((sigImg) => {
-			//then render the thank you handlebar and put in it the number of signed and the the signature image============
+
             res.render('thankYou', {
                 num: countId,
                 img:sigImg
@@ -200,7 +195,7 @@ app.get('/thankYou', (req, res) => {
 
 //======================================================================================================
 
-//=========================get the handlebar of names of people who signed==========================
+//=========================names of people who signed==========================
 
 
 app.get('/thoseWhoSigned', (req, res) => {

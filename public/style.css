@@ -1,18 +1,16 @@
-{
+* {
     margin:0;
+}
+
+body {
+    padding: 100px;
+    background-color: skyBlue;
 }
 
 a {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 20px;
     color: black;
-
-}
-
-body {
-    padding: 100px;
-    background-color: skyBlue;
-
 }
 
 img{
@@ -20,7 +18,6 @@ img{
     border-radius: 50px;
     height: 500px;
     width:500px;
-
 }
 
 button {
@@ -28,7 +25,6 @@ button {
     width:200px;
     border-radius: 15px;
     font-size: 20px;
-
 }
 
 input {
@@ -40,16 +36,9 @@ input {
     font-size: 20px;
 }
 
-
-
 #canvas{
-
     border: 5px solid black;
     position: absolute;
     left: 25%;
     border-radius: 25px;
-}
-
-#names {
-
 }

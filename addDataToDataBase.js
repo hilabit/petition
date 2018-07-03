@@ -1,5 +1,5 @@
 const spicedPg = require("spiced-pg");
-const bcrypt = require('bcryptjs');//to hash password
+const bcrypt = require('bcryptjs');
 
 let dataBase;
 if (!process.env.DATABASE_URL) {
@@ -65,7 +65,7 @@ exports.checkpass = function(password, hashedpass) {
             if (err) {
                 reject(err);
             } else {
-                resolve(doesMatch); //returns true/false
+                resolve(doesMatch);
             }
         });
     });
@@ -88,12 +88,12 @@ exports.addInfo = ({age, city, homepage, userid}) => {
 
 
 
-exports.sign = ({ sig, userid }) => {  //exports this function to index.js
+exports.sign = ({ sig, userid }) => {
     return dataBase.query (`INSERT INTO signatures (sig, userid)
                              VALUES ($1, $2)
-                             RETURNING sigid`, [sig, userid]) //these are the results
+                             RETURNING sigid`, [sig, userid])
     .then((results) => {
-        console.log("this is the sig id being returned",results.rows[0].sigid); //result is an object of what we've returned
+        console.log("this is the sig id being returned",results.rows[0].sigid);
         return results.rows[0].sigid;
 
     });
@@ -103,10 +103,10 @@ exports.sign = ({ sig, userid }) => {  //exports this function to index.js
 
 
 exports.getCountId = () => {
-    return dataBase.query(`SELECT COUNT (*) FROM signatures`) //COUNT-->  number of rows
+    return dataBase.query(`SELECT COUNT (*) FROM signatures`)
     .then((result) => {
         console.log("getCountId", result.rows[0]);
-        return result.rows[0].count; //rows[0]==> the last submitted row
+        return result.rows[0].count;
     })
 }
 

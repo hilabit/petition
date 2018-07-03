@@ -1,25 +1,20 @@
 <div id = "register">
-<h1>Join us in our endeavors in making Berlin the bike - friendliest city in the world</h1>
+    <h1>Join us in our endeavors in making Berlin the bike - friendliest city in the world</h1>
 
-<form action="/users" method="post">      <!--the database where the form should be sent to-->
-
-    <div id = "creds">
-
-        <input type= "text" name= "first" placeholder= "First name" requierd>
-        <input type= "text" name= "last" placeholder= "Last name" required>
-        <input type = "email" name = "email" placeholder="email" required>
-        <input type = "password" name = "password" placeholder="password" required>
-        <input type="submit" value="Submit" id = "submit">
-
+    <form action="/users" method="post">
+            <div id = "creds">
+                <input type= "text" name= "first" placeholder= "First name" requierd>
+                <input type= "text" name= "last" placeholder= "Last name" required>
+                <input type = "email" name = "email" placeholder="email" required>
+                <input type = "password" name = "password" placeholder="password" required>
+                <input type="submit" value="Submit" id = "submit">
+            </div>
 
 
-    </div>
-
-
-    <a href="/login">registered user? log in here!</a>
-    {{error}}
+            <a href="/login">registered user? log in here!</a>
+            {{error}}
 
 
 
-</form>
+    </form>
 </div>
