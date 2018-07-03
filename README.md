@@ -8,11 +8,12 @@ The idea behind this project is to create an online petition that visitors can s
 
 1. Login and registration.
 
-2. A canvas element where the users can physically sign save their signature.
+2. A canvas element where the users can physically sign and save their signature.
 
 3. PostgresSQL as database.
 
 
+[The app is also available on Heroku](https://hilaspetition.herokuapp.com/)
 ### Images:
 
 <p align="center"><img src="imgsForGithub/img1.png"></p>
