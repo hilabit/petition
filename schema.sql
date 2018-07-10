@@ -32,10 +32,3 @@ CREATE TABLE user_profiles(
     userid INTEGER not null,
     created_at TIMESTAMP default CURRENT_TIMESTAMP
 );
-
-
-
-
-
-
--- You should also change the signatures table so that it has a column for the user id. You need to be able to map signatures to users and users to signatures.
