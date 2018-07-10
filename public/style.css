@@ -50,6 +50,7 @@ body {
   margin: -8px auto;
   text-align: center;
   line-height: 38px;
+  padding: 4px;
 }
 
 .my-h1 h1 {
@@ -76,12 +77,12 @@ input {
 	-webkit-appearance: none;
 }
 
-.Register {
+.Register , #login, .addInfo {
 	margin: 50px auto;
 	width: 242px;
 }
 
-.Register span {
+.Register span , #login span, .addInfo{
 	color: hsl(5, 50%, 57%);
 	display: block;
 	height: 48px;
@@ -91,13 +92,13 @@ input {
 	width: 36px;
 }
 
-.Register input {
+.Register input , #login input, addInfo input {
 	border: none;
 	height: 48px;
 	outline: none;
 }
 
-.Register input[type="text"] {
+.Register input[type="text"] , #login input[type="text"], .addInfo input[type='text']{
 	background-color: #fff;
 	border-top: 2px solid #2c90c6;
 	border-right: 1px solid #000;
@@ -112,7 +113,7 @@ input {
 	width: 204px;
 }
 
-.Register input[type="password"] {
+.Register input[type="password"], #login input[type='password'] {
 	background-color: #fff;
 	border-top: 2px solid #2c90c6;
 	border-right: 1px solid #000;
@@ -129,7 +130,7 @@ input {
 	width: 204px;
 }
 
-.Register input[type="submit"] {
+.Register input[type="submit"], #login input[type='submit'], .addInfo input[type='submit']{
 	background-color: #2c90c6;
 	border: 1px solid #2c90c6;
 	border-radius: 15px;
@@ -145,12 +146,12 @@ input {
 	width: 240px;
 }
 
-.Register input[type="submit"]:hover {
+.Register input[type="submit"]:hover, #login input[type="submit"]:hover, addInfo input[type="submit"]:hover {
 	background-color: #2c70c6;
   box-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
 }
 
-.text {
+.text , .login, {
   color: #2c90c6;
   font-size: 40px;
   margin: 2% auto;
@@ -162,4 +163,12 @@ input {
 
 p:hover {
   text-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
+}
+
+.login {
+	padding:0;
+	font-size: 23px;
+	position:relative;
+	top:-28px;
+	margin: -8%;
 }
