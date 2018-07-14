@@ -1,11 +1,21 @@
-<div id="addInfo">
-    <h1>We'd love to hear some more about you</h1>
-        <form method="POST" action="/addInfo">
-            <span class="fontawesome-envelope-alt"></span><input type="number" name="age" placeholder="your age">
-            <span class="fontawesome-envelope-alt"></span><input type="text" name="city" placeholder="where do you live?"  autocapitalize="words">
-            <span class="fontawesome-envelope-alt"></span><input type="text" name="homepage" placeholder="home page URL">
 
-    <span class="button"><button type="submit" name="continue">CONTINUE</button>
-    </form>
-        {{error}}
+
+
+
+
+        <p class="text">Add info</p>
+        <div class="my-h1">
+            <h1>We'd love to hear some more about you</h1>
+        </div>
+
+
+<div id="addInfo">
+        <form method="post" action="/addInfo">
+
+            <span class="fontawesome-home"></span><input type="text" name="city" placeholder="where do you live?"  autocapitalize="words">
+            <span class="fontawesome-link"></span><input type="text" name="homepage" placeholder="home page URL">
+            <span class="fontawesome-user"></span><input type="number" name="age" placeholder="your age">
+            <span class="button"><input type="submit" value="submit" id ="submit">
+        </form>
+        <p>{{error}}</p>
 </div>

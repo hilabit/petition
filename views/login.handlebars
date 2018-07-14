@@ -2,7 +2,7 @@
 
     <form action="/login" method="post">
         <div class="login-container">
-            <p class="login">glad to have you back, dear Biker friend</p>
+            <p class="text login">glad to have you back, dear Biker friend</p>
             <span class="fontawesome-envelope-alt"></span><input type = "text" name = "email" placeholder="email" required>
             <span class="fontawesome-lock"></span><input type = "password" name = "password" placeholder="password" required>
             <span class="button"><input type="submit" value="Submit" id = "submit">
@@ -10,6 +10,6 @@
 
         </div>
 
-            {{err}}
+            <p>{{err}}</p>
     </form>
 </div>

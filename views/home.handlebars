@@ -1,20 +1,16 @@
-{{#if error}}
-<div>you did it wrong</div>
-{{/if}}
+<div class="sign-page">
 
+    {{#if error}}
+    <p>you did it wrong. Sign again please</p>
+    {{/if}}
 
+    <div id = signature-pad>
+        <p class="text">please add your signature here</p>
+        <form action="/home" method="post">
+                    <canvas id="canvas"></canvas>
+                    <input type="hidden" name="sig" required>
+                    <span class="button"><input type="submit" value="Submit" id="submit">
+        </form>
+    </div>
 
-
-<h1>sign our petition to make Berlin the bike capital of the world by adding bike lanes</h1>
-<form action="/home" method="post">     
-
-
-        <input type = "hidden" name = "sig" required>
-            <div id = signature-pad>
-            <canvas id="canvas" width="300" height="100"></canvas>
-            </div>
-         <button type="submit" value="Submit" id = "submit">SUBMIT</button>
-
-
-
-</form>
+</div>

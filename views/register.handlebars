@@ -2,9 +2,6 @@
 
     <div class="Register">
         <form method="post" action="/users">
-
-
-
             <span class="fontawesome-user"></span><input type="text" name='first' required placeholder="First name">
             <span class="fontawesome-user"></span><input type="text" name='last' required placeholder="Last name">
             <span class="fontawesome-envelope-alt"></span><input type="text" name="email" placeholder="email">
@@ -17,4 +14,4 @@
 
 
 
-            {{error}}
+            <p>{{error}}</p>

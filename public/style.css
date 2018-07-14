@@ -4,6 +4,7 @@
 @import url(http://weloveiconfonts.com/api/?family=fontawesome);
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 
+
 body {
 	background: #1b1e24;
     background-image:-webkit-linear-gradient(right,#1b1e24,#1b1e24 50%,#1b1e24);
@@ -38,11 +39,12 @@ body {
     border-radius: 40px;
 }
 
-.login-aTag {
+/*.login-aTag*/
+a , p{
     text-decoration:none;
     font-family: Arial, sans-serif;
     font-size: 10px;
-    color: #fff;
+    color: #2c90c6;
 }
 
 .my-h1 {
@@ -58,13 +60,6 @@ body {
   font-family: 'Titan One';
 }
 
-#canvas{
-    border: 5px solid black;
-    position: absolute;
-    left: 25%;
-    border-radius: 25px;
-}
-
 [class*="fontawesome-"]:before {
   font-family: 'FontAwesome', sans-serif;
 }
@@ -77,12 +72,12 @@ input {
 	-webkit-appearance: none;
 }
 
-.Register , #login, .addInfo {
+.Register , #login, #addInfo, .editCreds{
 	margin: 50px auto;
 	width: 242px;
 }
 
-.Register span , #login span, .addInfo{
+.Register span , #login span, #addInfo span, .editCreds span{
 	color: hsl(5, 50%, 57%);
 	display: block;
 	height: 48px;
@@ -92,13 +87,13 @@ input {
 	width: 36px;
 }
 
-.Register input , #login input, addInfo input {
+.Register input , #login input, #addInfo input, .editCreds input{
 	border: none;
 	height: 48px;
 	outline: none;
 }
 
-.Register input[type="text"] , #login input[type="text"], .addInfo input[type='text']{
+.Register input[type="text"] , #login input[type="text"], #addInfo input[type='text'], .editCreds input[type='text']{
 	background-color: #fff;
 	border-top: 2px solid #2c90c6;
 	border-right: 1px solid #000;
@@ -113,7 +108,8 @@ input {
 	width: 204px;
 }
 
-.Register input[type="password"], #login input[type='password'] {
+
+.Register input[type="password"], #login input[type='password'], #addInfo input[type='number'], .editCreds input[type='number'], .editCreds input[type='password'] {
 	background-color: #fff;
 	border-top: 2px solid #2c90c6;
 	border-right: 1px solid #000;
@@ -130,7 +126,8 @@ input {
 	width: 204px;
 }
 
-.Register input[type="submit"], #login input[type='submit'], .addInfo input[type='submit']{
+/*.Register input[type="submit"], #login input[type='submit'], #addInfo input[type='submit']{*/
+input[type='submit']{
 	background-color: #2c90c6;
 	border: 1px solid #2c90c6;
 	border-radius: 15px;
@@ -146,12 +143,12 @@ input {
 	width: 240px;
 }
 
-.Register input[type="submit"]:hover, #login input[type="submit"]:hover, addInfo input[type="submit"]:hover {
+.Register input[type="submit"]:hover, #login input[type="submit"]:hover, #addInfo input[type="submit"]:hover, .editCreds input[type="submit"]:hover {
 	background-color: #2c70c6;
   box-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
 }
 
-.text , .login, {
+.text {
   color: #2c90c6;
   font-size: 40px;
   margin: 2% auto;
@@ -165,10 +162,53 @@ p:hover {
   text-shadow: 2px 2px 20px  #2c90c6, #fff 0 -1px 2px;
 }
 
-.login {
+.login{
 	padding:0;
 	font-size: 23px;
 	position:relative;
 	top:-28px;
 	margin: -8%;
+}
+
+.sign-page p, .thankYou p, .thoseWhoSigned h1, .editCreds p{
+	font-size:20px;
+	padding-top: 0;
+}
+
+#canvas{
+    border: 5px solid #2c90c6;
+    position: relative;
+	left: 6%;
+    border-radius: 25px;
+	width:30%;
+	height:15%;
+}
+
+.sign-page input[type='submit']{
+	width: 10%;
+	line-height: 32px;
+	-webkit-border-radius: 8px;
+	position: relative;
+	left:-15%;
+}
+
+.thoseWhoSigned links {
+	padding-bottom: 0;
+}
+
+.thoseWhoSigned h1 {
+	padding-right: 10%;
+	padding-left: 10%;
+	font-size: 17px;
+}
+
+h4 {
+	font-family: 'Titan One';
+	font-size: 10px;
+	color: #2c90c6;
+
+}
+
+.editCreds {
+	margin-top:0;
 }

@@ -1,27 +1,31 @@
-<div id="edit-creds-h1-wrapper">
-    <h1>Why don't you edit your profile? Decisiveness is overrated</h1>
-</div>
+<div class="editCreds">
+        <p class="text">Why don't you edit your profile?</p>
+        <h4>Decisiveness is overrated</h4>
 
-<div id="edit-profile-wrapper">
-    {{#users}}
 
-    <form method="POST" action="/editCreds">
-        <input type = "text" name = "first" placeholder="first" value ="{{first}}" required>
-        <input type = "text" name = "last" placeholder="last" value ="{{last}}" required>
-        <input type = "email" name = "email" placeholder="email" value ="{{email}}" required>
-        <input type = "password" name = "hashedpass" placeholder="pasword" required>
-        <input type = "number" name = "age" placeholder="age" value ="{{age}}" >
-        <input type = "text" name = "city" placeholder="city" value ="{{city}}"  autocapitalize = "words">
-        <input type="text" name ="homepage" placeholder="home page URL" value ="{{homepage}}">
+        <div id="edit-profile-wrapper">
+            {{#users}}
 
-    {{/users}}
+                <form method="POST" action="/editCreds">
+                    <span class="fontawesome-user"></span><input type="text" name='first' required placeholder="First name" value="{{first}}">
+                    <span class="fontawesome-user"></span><input type="text" name='last' required placeholder="Last name" value="{{last}}">
+                    <span class="fontawesome-envelope-alt"></span><input type="text" name='email' required placeholder="Email" value="{{email}}">
+                    <span class="fontawesome-user"></span><input type="text" name='age' required placeholder="Age" value="{{age}}">
+                    <span class="fontawesome-home"></span><input type="text" name='city' required placeholder="City" value="{{city}}">
+                    <span class="fontawesome-link"></span><input type="text" name='homepage' required placeholder="Homepage" value="{{homepage}}">
+                    <span class="fontawesome-lock"></span><input type="password" name='hashedpass' required placeholder="Password">
+                    <span class="button"><input type="submit" value="Update" id = "submit">
 
-            <button type="submit" name = "update">UPDATE</button>
-            {{error}}
-            <a href = "/thoseWhoSigned">[ See the other signers here ]</a>
-            <a href = "/citySigners">[ See the people from your city who signed ]</a>
-            <a href= "/register">[ Log Out ]</a>
+                </form>
+            {{/users}}
+
+        </div>
+        <p>{{error}}</p>
+
+        <div class="links">
+            <a href = "/thoseWhoSigned">Other people who signed here |</a>
+            <a href = "/citySigners">People from {{city}} who signed |</a>
+            <a href= "/register">Log Out</a>
         </div>
 
-    </form>
 </div>

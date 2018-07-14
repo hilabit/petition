@@ -5,6 +5,7 @@ $(document).ready(() => {
                   sig = document.getElementsByName('sig')[0];
                   let mouseX,
                   mouseY;
+                  context.strokeStyle = "#ff0dbf";
 
                   canvas.addEventListener("mousedown", onMouseDown);
 
@@ -24,7 +25,7 @@ $(document).ready(() => {
                       context.stroke();
                   }
 
-                  function onMouseUp(event) { 
+                  function onMouseUp(event) {
                       sig.value = canvas.toDataURL();
                       canvas.removeEventListener("mousemove", onMouseMove);
                       document.body.removeEventListener("mouseup", onMouseUp);

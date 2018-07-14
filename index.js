@@ -77,13 +77,13 @@ app.post('/users', (req,res) => {
 			}).catch((err) => {
 				console.log("error in post request", err);
 				res.render('register', {
-					error: "fill it out better"
+					error: "error. fill it out better"
 				});
 			})
 		}
 		else {
 			res.render('register', {
-				error: "fill it out better"
+				error: "error. fill it out better"
 			});
 		}
 	})
@@ -108,12 +108,12 @@ app.post('/login', (req,res) => {
 		}).catch((err) => {
 			console.log("error", err);
 			res.render('login', {
-				error: "you're wrong"
+				error: "error. try again"
 			})
 		})
 	} else {
 		res.render('login', {
-			error: "nope"
+			error: "error. try again"
 		})
 	}
 
@@ -254,7 +254,7 @@ app.post('/editCreds', (req, res) => {
 		.catch((err) => {
 			console.log("error", err);
 			res.redirect('/editCreds', {
-				error: "you haven't done it right"
+				error: "error.you haven't done it right"
 			})
 
 		})
